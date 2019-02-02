@@ -16,18 +16,20 @@ import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { IntroductionComponent } from './components/products/introduction/introduction.component';
 import { ProductsDisplayerComponent } from './components/products/products-displayer/products-displayer.component';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
-
-import { SuppliersComponent } from './components/admin-panel/suppliers/suppliers.component';
-import { AdminNavbarComponent } from './components/admin-panel/admin-navbar/admin-navbar.component';
-import { AdminProductsComponent } from './components/admin-panel/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
 
 
 import{ AppRoutingModule } from './app-routing.module';
-import { UserListComponent } from './components/user-list/user-list.component'
+import { UserListComponent } from './components/user-list/user-list.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { AllProductListComponent } from './components/products/product-list/all-product-list/all-product-list.component';
+import { MilkyListComponent } from './components/products/product-list/milky-list/milky-list.component';
+import { MeatListComponent } from './components/products/product-list/meat-list/meat-list.component';
+import { SnackListComponent } from './components/products/product-list/snack-list/snack-list.component';
+import { AddProductComponent } from './components/products/add-product/add-product.component'
 
 @NgModule({
   declarations: [
@@ -43,12 +45,14 @@ import { UserListComponent } from './components/user-list/user-list.component'
     HomeComponent,
     IntroductionComponent,
     ProductsDisplayerComponent,
+    UserListComponent,
     AdminPanelComponent,
-  
-    SuppliersComponent,
-    AdminNavbarComponent,
-    AdminProductsComponent,
-    UserListComponent
+    ProductListComponent,
+    AllProductListComponent,
+    MilkyListComponent,
+    MeatListComponent,
+    SnackListComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
