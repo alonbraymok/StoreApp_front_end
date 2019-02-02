@@ -15,9 +15,10 @@ export class AllProductListComponent implements OnInit {
    new Product('1','all','braymok',20,'human'),
   ]
 
-  constructor(private _userProduct: ProductService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
+    this.products =  this._productService.getCurrentProducts();
   }
 
 }
