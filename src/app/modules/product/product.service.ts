@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http'
 
 
 @Injectable()
-export class UserService {
+export class ProductService {
     
     private products: Product ;
 

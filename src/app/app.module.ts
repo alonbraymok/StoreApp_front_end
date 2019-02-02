@@ -20,7 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 
 import{ AppRoutingModule } from './app-routing.module';
-import { UserListComponent } from './components/user-list/user-list.component'
+import { UserListComponent } from './components/user-list/user-list.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { AllProductListComponent } from './components/products/product-list/all-product-list/all-product-list.component';
+import { MilkyListComponent } from './components/products/product-list/milky-list/milky-list.component';
+import { MeatListComponent } from './components/products/product-list/meat-list/meat-list.component';
+import { SnackListComponent } from './components/products/product-list/snack-list/snack-list.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +42,13 @@ import { UserListComponent } from './components/user-list/user-list.component'
     HomeComponent,
     IntroductionComponent,
     ProductsDisplayerComponent,
-    UserListComponent
+    UserListComponent,
+    AdminPanelComponent,
+    ProductListComponent,
+    AllProductListComponent,
+    MilkyListComponent,
+    MeatListComponent,
+    SnackListComponent
   ],
   imports: [
     BrowserModule,
