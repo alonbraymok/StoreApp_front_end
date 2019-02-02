@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   addUser(){
     this.user = new User(this.email,this.password,this.username ,this.address,this.birthday);
-    this._userService.addNewUser(this.user);
+    // this._userService.addNewUser(this.user);
   }
   ngOnInit() {
   }

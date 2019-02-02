@@ -39,5 +39,15 @@ export class NavbarComponent implements OnInit {
     this.showLoginModal
     console.log('blaaaa')
   }
+  
+  userLoggedIn = () => {
+    const activeUser = sessionStorage.getItem('activeUser')
+    return sessionStorage.getItem('activeUser') !== null
+  }
+
+  logoutUser = () => {
+    debugger
+    sessionStorage.removeItem('activeUser')
+  }
 
 }

@@ -23,6 +23,8 @@ import { AdminNavbarComponent } from './components/admin-panel/admin-navbar/admi
 import { AdminProductsComponent } from './components/admin-panel/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
+import { UsersService } from './modules/user/users.service';
+
 
 import{ AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component'
@@ -64,7 +66,7 @@ import { UserListComponent } from './components/user-list/user-list.component'
     //   {path: 'adminPanel/users', component: AdminPanelComponent}
     // ])
   ],
-  providers: [UserService],
+  providers: [UserService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

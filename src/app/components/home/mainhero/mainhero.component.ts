@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/modules/user/user.service';
 import {User} from 'src/app/modules/user/user.model'
+import { UsersService } from 'src/app/modules/user/users.service';
 
 @Component({
   selector: 'app-mainhero',
   templateUrl: './mainhero.component.html',
   styleUrls: ['./mainhero.component.css'],
-  providers: [UserService]
+  providers: [UsersService]
 })
 
 
@@ -15,17 +16,27 @@ export class MainheroComponent implements OnInit {
   content: String;
   description: String;
   newUsers: User[];
+  activeUser: any;
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UsersService) { }
 
   ngOnInit() {
-    this.title = "- Welcome To Super Suisa! -";
-    this.content = "this is the dynamic content!";
-    this.description = "another desription";
+    this.isUserActive()
   }
 
-  getAllUsers = () => {
-    this.newUsers = this._userService.getCurrentUsers()
+  isUserActive = () => {
+    let activeUser;
+    this.content = "this is the dynamic content!";
+    this.description = "another desription";
+
+    if (sessionStorage.getItem('activeUser')) {
+      activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
+      this.title = `Hi ${activeUser.username} and welcome to SuperSuisa!`
+      return true
+    } else {
+      this.title = `Hi, Welcome To SuperSuisa`
+      return false
+    }
   }
 
 }
