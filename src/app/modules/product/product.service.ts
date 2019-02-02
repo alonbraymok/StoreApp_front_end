@@ -25,5 +25,9 @@ export class ProductService {
         return this.products;
     }
 
-    
+    addNewProduct(product: Product){
+        console.log(product);
+        //send product to db
+    }
+
 }
