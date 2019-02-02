@@ -16,11 +16,6 @@ import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { IntroductionComponent } from './components/products/introduction/introduction.component';
 import { ProductsDisplayerComponent } from './components/products/products-displayer/products-displayer.component';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
-
-import { SuppliersComponent } from './components/admin-panel/suppliers/suppliers.component';
-import { AdminNavbarComponent } from './components/admin-panel/admin-navbar/admin-navbar.component';
-import { AdminProductsComponent } from './components/admin-panel/admin-products/admin-products.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 
@@ -41,11 +36,6 @@ import { UserListComponent } from './components/user-list/user-list.component'
     HomeComponent,
     IntroductionComponent,
     ProductsDisplayerComponent,
-    AdminPanelComponent,
-  
-    SuppliersComponent,
-    AdminNavbarComponent,
-    AdminProductsComponent,
     UserListComponent
   ],
   imports: [

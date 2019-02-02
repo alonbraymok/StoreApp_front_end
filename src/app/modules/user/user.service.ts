@@ -46,7 +46,7 @@ export class UserService {
                 if (data['ok']) {
                     console.log('user add seccessfuly');
                 } else {
-                    console.log('error while adding a new user..');
+                    console.log('error while adding a new userss..');
                 }
             });
             this.updateCurrentUsers();
