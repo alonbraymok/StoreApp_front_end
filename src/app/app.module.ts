@@ -18,6 +18,8 @@ import { IntroductionComponent } from './components/products/introduction/introd
 import { ProductsDisplayerComponent } from './components/products/products-displayer/products-displayer.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
+import { UsersService } from './modules/user/users.service';
+
 
 import{ AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component';
@@ -68,7 +70,7 @@ import { AddProductComponent } from './components/products/add-product/add-produ
     //   {path: 'adminPanel/users', component: AdminPanelComponent}
     // ])
   ],
-  providers: [UserService],
+  providers: [UserService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

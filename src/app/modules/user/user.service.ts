@@ -10,7 +10,6 @@ export class UserService {
     
 
     constructor(private http: HttpClient) { 
-        this.updateCurrentUsers();
      }
 
     updateCurrentUsers = () => {
