@@ -21,6 +21,16 @@ export class ProductService {
                 }
             })
     }
+
+    getProductsByCategory = (category) => {
+        debugger
+        return this.http.get(`/api/products/${category.toUpperCase()}`)
+    }
+
+    getCategories = () => {
+        return this.http.get(`/api/products/categories`)
+    }
+
     getCurrentProducts(){
         return this.products;
     }

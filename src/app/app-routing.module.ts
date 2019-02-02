@@ -18,6 +18,7 @@ import { SnackListComponent } from 'src/app/components/products/product-list/sna
 const routes: Routes = [
 
       {path: '', component: HomeComponent},
+      {path: 'products', component: ProductsComponent},
       {path: 'products/meat', component: ProductsComponent},
       {path: 'products/milky', component: ProductsComponent},
       {path: 'products/snacks', component: ProductsComponent},

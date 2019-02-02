@@ -18,7 +18,6 @@ export class ProductListComponent implements OnInit {
   constructor(private _userProduct: ProductService) { }
 
   ngOnInit() {
-    this.products.forEach(product => console.log(product.id) )
   }
 
 }
