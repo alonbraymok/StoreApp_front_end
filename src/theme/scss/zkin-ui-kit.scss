@@ -1,0 +1,47 @@
+// ZKIN - Bootstrap 4 Skin & UI Kit
+// Copyright (c) 2018, Pophonic
+// Author: Pophonic
+// Profile: https://codecanyon.net/user/pophonic
+
+
+// Theme customizations
+@import "theming";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Modified & Extended
+@import "mixins";
+@import "partials/reboot";
+@import "partials/type";
+@import "partials/tables";
+@import "partials/forms";
+@import "partials/buttons";
+@import "partials/dropdown";
+@import "partials/button-group";
+@import "partials/input-group";
+@import "partials/custom-forms";
+@import "partials/nav";
+@import "partials/navbar";
+@import "partials/card";
+@import "partials/breadcrumb";
+@import "partials/pagination";
+@import "partials/badge";
+@import "partials/alert";
+@import "partials/progress";
+@import "partials/list-group";
+@import "partials/close";
+@import "partials/modal";
+@import "partials/tooltip";
+@import "partials/popover";
+@import "partials/carousel";
+@import "utilities/background";
+@import "utilities/colors";
+@import "utilities/shadows";
+@import "utilities/text";
+
+// Extra components
+@import "extras/title";
+@import "extras/dividers";
+@import "extras/meta";
+@import "extras/author";

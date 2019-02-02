@@ -1,0 +1,8 @@
+.mainHero {
+  max-width: 800px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+.mainHeroDescription {
+  font-size: 15px;
+}

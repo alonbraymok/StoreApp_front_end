@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary navbar-round shadow">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">
+        <img src="../../../assets/logo.png" style="width: 100px; margin-right: 40px;" id="logo" />
+    </a>  
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarCollapse1">
+        <ul class="navbar-nav mr-auto pr-lg-4 py-3 py-lg-0">
+            <li class="nav-item active">
+                <a routerLink="/" style="cursor: pointer" class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a style="cursor: pointer" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a routerLink="products/milky" class="dropdown-item" >Milky</a>
+                <a routerLink="products/snacks" class="dropdown-item">Snacks</a>
+                <a routerLink="products/meat" class="dropdown-item">Meat</a>
+              </div>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Admin Panel</a>
+            </li>
+        </ul>
+        <form class="form-light-2 mb-3 mb-lg-0">
+            <div class="input-group input-group-round">
+                <div class="input-group-inner">
+                    <input type="text" class="form-control" placeholder="Keyword" aria-label="Keyword" aria-describedby="button-search">
+                    <div class="input-group-append">
+                        <button class="btn btn-round btn-dark mb-0 shadow-none" type="button" id="button-search">Search</button>
+                    </div>
+                    <div class="input-focus-bg"></div>
+                </div>
+            </div>
+        </form>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link loginButton" data-toggle="modal" data-target="#loginModal">Log in</a>
+            </li>
+            <li class="nav-item">
+                <app-register></app-register>
+            </li>
+            <li *ngIf="false" class="nav-item">
+                    <a class="nav-link" href="#">Log out</a>
+            </li>
+            <li *ngIf="false" class="nav-item">
+                    <a class="nav-link" href="#">Log in</a>
+            </li>    
+        </ul>
+    </div>
+  </div>
+</nav>

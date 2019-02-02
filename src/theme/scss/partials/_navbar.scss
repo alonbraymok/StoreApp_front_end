@@ -1,0 +1,111 @@
+// Navbar brand
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: $navbar-brand-mr;
+}
+
+// Navbar nav
+
+.navbar-nav {
+
+  .nav-link {
+    padding-top: $navbar-link-py;
+    padding-bottom: $navbar-link-py;
+    font-size: $navbar-font-size;
+
+    &::before {
+      display: none;
+    }
+
+    i {
+      margin-right: $navbar-icon-mr;
+    }
+
+    &.disabled {
+      /* stylelint-disable-next-line declaration-no-important */
+      background-color: transparent !important;
+    }
+  }
+}
+
+// Responsive navbar
+//
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  border: none;
+
+  @include hover-focus {
+    outline: 0;
+  }
+}
+
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+/* stylelint-disable */
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        > .container,
+        > .container-fluid {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+
+      @include media-breakpoint-up($next) {
+        .nav-item {
+          margin-right: $navbar-nav-item-mr;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          > .nav-link,
+          &.nav-link {
+            border-radius: $navbar-item-border-radius;
+            @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+          }
+
+          &.active,
+          &:hover,
+          &:focus {
+            > .nav-link,
+            &.nav-link {
+              background-color: $navbar-active-bg-color;
+            }
+          }
+        }
+
+        &.navbar-light {
+          .nav-item {
+            &.active,
+            &:hover,
+            &:focus {
+              > .nav-link,
+              &.nav-link {
+                background-color: $navbar-light-active-bg-color;
+              }
+            }
+          }
+        }
+
+        &.navbar-round {
+          .nav-item {
+            > .nav-link,
+            &.nav-link {
+              border-radius: $navbar-round-item-border-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* stylelint-enable */
