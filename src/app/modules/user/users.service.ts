@@ -20,7 +20,6 @@ export class UsersService {
             this.activeUser = res['msg']
             sessionStorage.setItem('activeUser', JSON.stringify(res['msg']))
           } else { 
-            debugger
             alert(res['msg'])
           }
         }

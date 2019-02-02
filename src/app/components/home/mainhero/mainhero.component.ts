@@ -15,7 +15,6 @@ export class MainheroComponent implements OnInit {
   title: String;
   content: String;
   description: String;
-  newUsers: User[];
   activeUser: any;
 
   constructor(private _userService: UsersService) { }

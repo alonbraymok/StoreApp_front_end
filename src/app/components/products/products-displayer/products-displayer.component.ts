@@ -16,14 +16,16 @@ export class ProductsDisplayerComponent implements OnInit {
   productsType: String
   isChanged: Boolean = false
   categories: String[] = []
+  minval: Number;
+  maxval: Number;
+  selectedCategory: String;
 
   constructor(private route: ActivatedRoute, private _productService: ProductService) {  }
-  
+
   ngOnInit() {
     this.route.url
     .subscribe(url => {
       console.log(url);
-      debugger
       if (url[1]) {
         this.productsType = url[1].path;
       } else {
@@ -35,9 +37,16 @@ export class ProductsDisplayerComponent implements OnInit {
       this._productService.getCategories().subscribe(categories => {
         this.categories = categories['msg']
       })
-      debugger
     });
+    this.minval = 0;
+    this.maxval = 100;
+    this.selectedCategory = '';
+  }
 
+  handleSearch = () => {
+    this._productService.getProductsWithSearch(this.minval, this.maxval, this.selectedCategory).subscribe(data => {
+      this.products = data['msg']
+    })
   }
 
   isAllProducts = () => this.productsType === 'all'

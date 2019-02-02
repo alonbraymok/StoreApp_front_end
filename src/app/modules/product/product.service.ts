@@ -22,8 +22,11 @@ export class ProductService {
             })
     }
 
+    getProductsWithSearch = (minval, maxval, category) => {
+        return this.http.get(`/api/products/search/?minval=${minval}&maxval=${maxval}&category=${category}`)
+    }
+
     getProductsByCategory = (category) => {
-        debugger
         return this.http.get(`/api/products/${category.toUpperCase()}`)
     }
 

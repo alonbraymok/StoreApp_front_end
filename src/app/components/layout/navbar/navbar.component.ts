@@ -46,7 +46,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logoutUser = () => {
-    debugger
     sessionStorage.removeItem('activeUser')
   }
 
