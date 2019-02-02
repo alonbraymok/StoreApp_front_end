@@ -18,7 +18,7 @@ export class SnackListComponent implements OnInit {
   constructor(private _userProduct: ProductService) { }
 
   ngOnInit() {
-    this.products.forEach(product => console.log(product.id) )
+   this.products = this._userProduct.getAllSnackProduct();
   }
 
 }

@@ -27,7 +27,7 @@ import { AllProductListComponent } from './components/products/product-list/all-
 import { MilkyListComponent } from './components/products/product-list/milky-list/milky-list.component';
 import { MeatListComponent } from './components/products/product-list/meat-list/meat-list.component';
 import { SnackListComponent } from './components/products/product-list/snack-list/snack-list.component';
-import { AddProductComponent } from './components/products/add-product/add-product.component'
+import { AddProductComponent } from './components/products/add-product/add-product.component';
 
 @NgModule({
   declarations: [

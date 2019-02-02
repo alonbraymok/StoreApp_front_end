@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
      new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992')
   ]
   constructor(private _userService: UserService) { }
-
+  email: string;
 
   ngOnInit() {
     //this.users = this._userService.getCurrentUsers();
@@ -24,5 +24,14 @@ export class UserListComponent implements OnInit {
       console.log(user);
     })
   }
+  getUserWithParam(){
+    this.users = this._userService.getUserWithParams();
+  }
+  editUser(user: User){
+    
+  }
 
+  deleteUser(user: User){
+    this._userService.deleteSingilUser(user);
+  }
 }

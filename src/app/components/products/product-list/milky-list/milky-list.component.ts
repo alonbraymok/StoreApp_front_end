@@ -15,9 +15,9 @@ export class MilkyListComponent implements OnInit {
    new Product('1','milky','braymok',20,'human'),
   ]
 
-  constructor(private _userProduct: ProductService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.products.forEach(product => console.log(product.id) )
-  }
+    this.products = this._productService.getAllMilkyProduct();
+ }
 }

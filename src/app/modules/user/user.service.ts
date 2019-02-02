@@ -52,7 +52,7 @@ export class UserService {
             this.updateCurrentUsers();
     }
     deleteSingilUser = (user: User) => {
-        this.http.post(`/api/users/deleteUser`, user ).subscribe(
+        this.http.delete(`/api/users/${user.email}` ).subscribe(
             data => {
                 if (data['ok']) {
                     console.log('user delete seccessfuly');
@@ -63,5 +63,12 @@ export class UserService {
             this.updateCurrentUsers();
     }
 
+    getUserWithParams(): User[]{
+        //return all users that match to three params
+        return null;
+    }
 
+    editUser(email: string){
+
+    }
 }

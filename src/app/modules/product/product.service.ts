@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
 @Injectable()
 export class ProductService {
     
-    private products: Product ;
+    private products: Product[] ;
 
     constructor(private http: HttpClient) {
         this.updateCurrentProducts();
@@ -26,8 +26,19 @@ export class ProductService {
     }
 
     addNewProduct(product: Product){
-        console.log(product);
         //send product to db
+    }
+    getAllMeatProduct(): Product[] {
+        //return all meat product
+        return null;
+    }
+    getAllMilkyProduct(): Product[]{
+        //return all milky product
+        return null;
+    }
+    getAllSnackProduct(): Product[]{
+        //return all snack product
+        return null;
     }
 
 }
