@@ -30,6 +30,7 @@ import { MilkyListComponent } from './components/products/product-list/milky-lis
 import { MeatListComponent } from './components/products/product-list/meat-list/meat-list.component';
 import { SnackListComponent } from './components/products/product-list/snack-list/snack-list.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AddProductComponent } from './components/products/add-product/add-produ
     MilkyListComponent,
     MeatListComponent,
     SnackListComponent,
-    AddProductComponent
+    AddProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

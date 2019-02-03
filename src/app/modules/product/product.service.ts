@@ -53,5 +53,9 @@ export class ProductService {
         //return all snack product
         return null;
     }
+    getProductsByOrder(): Product[]{
+        //return product of spcific order
+        return null;
+    }
 
 }

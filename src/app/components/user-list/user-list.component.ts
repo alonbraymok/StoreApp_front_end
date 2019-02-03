@@ -15,6 +15,9 @@ export class UserListComponent implements OnInit {
      new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992'),
      new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992')
   ]
+
+  clickButton: string ='Click here';
+
   constructor(private _userService: UserService) { }
   email: string;
 
@@ -25,7 +28,17 @@ export class UserListComponent implements OnInit {
     })
   }
   getUserWithParam(){
-    this.users = this._userService.getUserWithParams();
+    if(this.clickButton == 'Click here'){
+      this.users = this._userService.getUserWithParams();
+      debugger
+      this.clickButton = 'Back';
+      
+    }else{
+      this._userService.updateCurrentUsers();
+      this.users = this._userService.getCurrentUsers();
+      this.clickButton = 'Click here';
+    }
+
   }
   editUser(user: User){
     
