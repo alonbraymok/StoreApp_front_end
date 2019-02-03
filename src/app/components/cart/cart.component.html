@@ -12,12 +12,13 @@
         </div>
         <div class="modal-body">
             <table class="table">
-                <thead class="thead-dark">
+                <thead class="thead-light">
                   <tr>
                     <th>#</th>
                     <th>Product name</th> 
-                    <th>Producr description</th>
-                    <th>Product Price</th> 
+                    <th>Product description</th>
+                    <th>Product Category</th> 
+                    <th>Product Price</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,7 @@
                     <td>{{i + 1}}</td>
                     <td>{{product.productName}}</td>
                     <td>{{product.productDesc}}</td>
+                    <td>{{product.productCategory}}</td>
                     <td>{{product.productPrice}}$</td>
                   </tr>
                 </tbody>
@@ -33,7 +35,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Buy Now!</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="resetOrder()">Buy Now!</button>
         </div>
       </div>
     </div>

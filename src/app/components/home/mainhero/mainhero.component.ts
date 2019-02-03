@@ -26,7 +26,7 @@ export class MainheroComponent implements OnInit {
   isUserActive = () => {
     let activeUser;
     this.content = "this is the dynamic content!";
-    this.description = "another desription";
+    
 
     if (sessionStorage.getItem('activeUser')) {
       activeUser = JSON.parse(sessionStorage.getItem('activeUser'))

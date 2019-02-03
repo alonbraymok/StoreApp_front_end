@@ -53,9 +53,12 @@ export class ProductService {
         //return all snack product
         return null;
     }
-    getProductsByOrder(): Product[]{
-        //return product of spcific order
+    getProductsByOrder(email: string): Product[]{
+        //return product of spcific user order by email
         return null;
+    }
+    restOrderForUser(email: string){
+        //reset order for spcific user by email
     }
 
 }

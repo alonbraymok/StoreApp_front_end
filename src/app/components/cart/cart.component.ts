@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
     new Product('p img','p name','p desc',2000,'p catgory')
   ];
   totalPrice: Number = 0;
+  email: string = '';
   constructor(private _producrService: ProductService) { }
 
   ngOnInit() {
@@ -22,9 +23,15 @@ export class CartComponent implements OnInit {
   }
 
   getOrderProducts(){
-    this.products = this._producrService.getProductsByOrder();
+    this.products = this._producrService.getProductsByOrder(this.email);
     this.products.forEach((product) => {
       this.totalPrice = this.totalPrice.valueOf() + product.productPrice.valueOf();
     })
   }
+
+  resetOrder(){
+    alert('order resert');
+    this._producrService.restOrderForUser(this.email);
+  }
+
 }
