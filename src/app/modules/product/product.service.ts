@@ -40,7 +40,7 @@ export class ProductService {
     }
 
     addNewProduct(product: Product){
-        //send product to db
+        this.http.put('/api/manage/products/product', product)
     }
     getAllMeatProduct(): Product[] {
         //return all meat product

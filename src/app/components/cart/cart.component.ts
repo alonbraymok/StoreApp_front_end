@@ -10,10 +10,7 @@ import { ProductService } from 'src/app/modules/product/product.service';
 })
 export class CartComponent implements OnInit {
 
-  products: Product[] = [
-    new Product('p img','p name','p desc',1000,'p catgory'),
-    new Product('p img','p name','p desc',2000,'p catgory')
-  ];
+  products: Product[];
   totalPrice: Number = 0;
   email: string = '';
   constructor(private _producrService: ProductService) { }

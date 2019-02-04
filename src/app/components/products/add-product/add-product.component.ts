@@ -10,23 +10,22 @@ import { ProductService } from 'src/app/modules/product/product.service';
 })
 export class AddProductComponent implements OnInit {
 
-  productName: string;
-  productCategory: string;
-  productDesc: string;
-  productImg: string;
-  productPrice: number;
-
   product: Product
-  
+  productName: string;
+  productType: string;
+  productPrice: number;
+  productImg: string;
+  productSupplier: string;
+
   constructor(private _product_service: ProductService) { }
 
   ngOnInit() {
   }
 
   addNewProduct(){
-    this.product = new Product(this.productImg, this.productName, this.productDesc,
-                               this.productPrice, this.productCategory);
-    this._product_service.addNewProduct(this.product);
+    this.product = new Product(this.productName, this.productType, this.productPrice, 
+      this.productImg, this.productSupplier);
+      this._product_service.addNewProduct(this.product);
   }
 
 }

@@ -34,7 +34,7 @@ export class UsersService {
   deleteUserByEmail = (email: string) => {
     console.log(email["email"]);
     debugger
-    this.http.delete(`/api/manage/users/:${email["email"]}`).subscribe(data => console.log(data))
+    this.http.delete(`/api/manage/users/${email["email"]}`).subscribe(data => console.log(data))
   }
 
     login = (user) => {

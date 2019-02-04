@@ -10,11 +10,6 @@ import { Product } from 'src/app/modules/product/product.model';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[] =
-  [new Product('1','alon','braymok',20,'human'),
-   new Product('1','alon','braymok',20,'human'),
-  ]
-
   constructor(private _userProduct: ProductService) { }
 
   ngOnInit() {
