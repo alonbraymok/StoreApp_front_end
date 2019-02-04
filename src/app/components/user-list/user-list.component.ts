@@ -18,12 +18,7 @@ export class UserListComponent implements OnInit {
   email: string;
 
   ngOnInit() {
-    this._usersService.getCurrentUsers().subscribe(data => {
-      this.users = data['msg'];
-      debugger
-    })
-    
-    
+    this.getCurrentUsers();
   }
   getUserWithParam(){
     if(this.clickButton == 'Click here'){
@@ -38,11 +33,18 @@ export class UserListComponent implements OnInit {
     }
 
   }
+
+  getCurrentUsers(){
+    this._usersService.getCurrentUsers().subscribe(data => {
+      this.users = data['msg']});
+  }
+
   editUser(user: User){
     
   }
 
-  deleteUser(user: User){
-    //this._usersService.deleteSingilUser(user);
+  deleteUser(email: string){
+    this._usersService.deleteUserByEmail(email);
+    this.getCurrentUsers();
   }
 }

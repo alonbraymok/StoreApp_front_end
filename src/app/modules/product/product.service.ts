@@ -13,13 +13,10 @@ export class ProductService {
      }
 
     updateCurrentProducts = () => {
-        debugger
         this.http.get(`/api/products/`).subscribe(
             data => {
                 if (data['ok']) {
-                    this.products = data['msg'];  
-                    debugger 
-                                   
+                    this.products = data['msg'];                                    
                 } else {
                     console.log("error");
                 }
