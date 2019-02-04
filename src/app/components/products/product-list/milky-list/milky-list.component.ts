@@ -10,14 +10,11 @@ import { Product } from 'src/app/modules/product/product.model';
 })
 export class MilkyListComponent implements OnInit {
 
-  products: Product[] =
-  [new Product('1','milky','braymok',20,'human'),
-   new Product('1','milky','braymok',20,'human'),
-  ]
+  products: any[] ;
 
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.products = this._productService.getAllMilkyProduct();
- }
+     this._productService.getProductsByCategory('milky').subscribe(data => this.products = data['msg'])
+  }
 }

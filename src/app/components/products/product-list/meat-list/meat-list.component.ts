@@ -10,15 +10,12 @@ import { Product } from 'src/app/modules/product/product.model';
 })
 export class MeatListComponent implements OnInit {
 
-  products: Product[] =
-  [new Product('1','meat','braymok',20,'human'),
-   new Product('1','meat','braymok',20,'human'),
-  ]
+  products: any[] ;
 
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-     this.products = this._productService.getAllMeatProduct();
+     this._productService.getProductsByCategory('meat').subscribe(data => this.products = data['msg'])
   }
 
 }

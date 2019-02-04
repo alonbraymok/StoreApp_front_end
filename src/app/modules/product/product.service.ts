@@ -6,18 +6,22 @@ import {HttpClient} from '@angular/common/http'
 @Injectable()
 export class ProductService {
     
-    private products: Product[] ;
+    private products: any[] ;
 
     constructor(private http: HttpClient) {
         this.updateCurrentProducts();
      }
 
     updateCurrentProducts = () => {
-        this.http.get(`/api/productss/allProducts`).subscribe(
+        debugger
+        this.http.get(`/api/products/`).subscribe(
             data => {
                 if (data['ok']) {
-                    this.products = data['msg'];
+                    this.products = data['msg'];  
+                    debugger 
+                                   
                 } else {
+                    console.log("error");
                 }
             })
     }
@@ -35,7 +39,7 @@ export class ProductService {
     }
 
     getCurrentProducts(){
-        return this.products;
+        return this.http.get(`/api/products/`);
     }
 
     addNewProduct(product: Product){

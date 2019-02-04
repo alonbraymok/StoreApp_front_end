@@ -1,41 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/modules/user/user.service'
+import { UsersService } from 'src/app/modules/user/users.service'
 import { User } from 'src/app/modules/user/user.model'
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-  providers: [UserService]
+  providers: [UsersService]
 })
 export class UserListComponent implements OnInit {
 
-  users: User[] =
-    [new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992'),
-     new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992'),
-     new User('test@gmail.com','123456','Alon braymok','Tel-aviv','28-5-1992')
-  ]
+  users: any[];
 
   clickButton: string ='Click here';
 
-  constructor(private _userService: UserService) { }
+  constructor(private _usersService: UsersService) { }
   email: string;
 
   ngOnInit() {
-    //this.users = this._userService.getCurrentUsers();
-    this.users.forEach(user=>{
-      console.log(user);
+    this._usersService.getCurrentUsers().subscribe(data => {
+      this.users = data['msg'];
+      debugger
     })
+    
+    
   }
   getUserWithParam(){
     if(this.clickButton == 'Click here'){
-      this.users = this._userService.getUserWithParams();
+      //this.users = this._usersService.getUserWithParams();
       debugger
       this.clickButton = 'Back';
       
     }else{
-      this._userService.updateCurrentUsers();
-      this.users = this._userService.getCurrentUsers();
+      this._usersService.updateCurrentUsers();
+      //this.users = this._usersService.getCurrentUsers();
       this.clickButton = 'Click here';
     }
 
@@ -45,6 +43,6 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(user: User){
-    this._userService.deleteSingilUser(user);
+    //this._usersService.deleteSingilUser(user);
   }
 }

@@ -10,15 +10,15 @@ import { Product } from 'src/app/modules/product/product.model';
 })
 export class AllProductListComponent implements OnInit {
 
-  products: Product[] =
-  [new Product('1','all','braymok',20,'human'),
-   new Product('1','all','braymok',20,'human'),
-  ]
+  products: any[] = [];
+  
 
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.products =  this._productService.getCurrentProducts();
+    debugger
+    this._productService.getCurrentProducts().subscribe(data => this.products = data['msg']);
+    debugger   
   }
 
 }

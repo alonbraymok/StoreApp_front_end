@@ -33,6 +33,7 @@ export class ProductsDisplayerComponent implements OnInit {
       }
       this._productService.getProductsByCategory(this.productsType).subscribe(data => {
         this.products = data['msg']
+        debugger
       })
       this._productService.getCategories().subscribe(categories => {
         this.categories = categories['msg']

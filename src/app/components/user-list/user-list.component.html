@@ -8,11 +8,11 @@
   <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Id</th>
       <th scope="col">User name</th>
       <th scope="col">Email</th>
+      <th scope="col">First name</th>
       <th scope="col">Password</th>
-      <th scope="col">Address</th>
-      <th scope="col">Birthday</th>
       <th scope="col"></th>
       
     </tr>
@@ -20,11 +20,11 @@
   <tbody>
     <tr *ngFor="let user of users; let i = index">
       <th scope="row">{{i + 1}}</th>
+      <td>{{user._id}}</td>
       <td>{{user.username}}</td>
       <td>{{user.email}}</td>
+      <td>{{user.firstname}}</td>
       <td>{{user.password}}</td>
-      <td>{{user.address}}</td>
-      <td>{{user.birthday}}</td>
       <button type="button" class="btn btn-light" (click)="editUser(user)">Edit</button>
       <button type="button" class="btn btn-light" (click)="deleteUser(user)">Remove</button>
     </tr>

@@ -13,10 +13,12 @@ export class UserService {
      }
 
     updateCurrentUsers = () => {
-        this.http.get(`/api/users/allUsers`).subscribe(
+        debugger
+        this.http.get(`/api/admin/mUsers`).subscribe(
             data => {
                 if (data['ok']) {
                     this.users = data['msg'];
+                    debugger
                 } else {
                 }
             })

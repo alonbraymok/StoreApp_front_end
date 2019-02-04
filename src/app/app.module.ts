@@ -31,6 +31,7 @@ import { MeatListComponent } from './components/products/product-list/meat-list/
 import { SnackListComponent } from './components/products/product-list/snack-list/snack-list.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { CartComponent } from './components/cart/cart.component';
+import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CartComponent } from './components/cart/cart.component';
     MeatListComponent,
     SnackListComponent,
     AddProductComponent,
-    CartComponent
+    CartComponent,
+    D3GraghComponent
   ],
   imports: [
     BrowserModule,

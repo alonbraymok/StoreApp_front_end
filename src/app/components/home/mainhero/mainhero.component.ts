@@ -13,8 +13,6 @@ import { UsersService } from 'src/app/modules/user/users.service';
 
 export class MainheroComponent implements OnInit {
   title: String;
-  content: String;
-  description: String;
   activeUser: any;
 
   constructor(private _userService: UsersService) { }
@@ -25,9 +23,7 @@ export class MainheroComponent implements OnInit {
 
   isUserActive = () => {
     let activeUser;
-    this.content = "this is the dynamic content!";
     
-
     if (sessionStorage.getItem('activeUser')) {
       activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
       this.title = `Hi ${activeUser.username} and welcome to SuperSuisa!`

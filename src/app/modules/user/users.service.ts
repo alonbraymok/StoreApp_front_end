@@ -7,8 +7,29 @@ import {HttpClient} from '@angular/common/http'
 
 export class UsersService {
   private activeUser: any;
+  private users: User[];
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+      this.updateCurrentUsers();
+     }
+
+    updateCurrentUsers = () => {
+      debugger
+      this.http.get(`/api/manage/users/`).subscribe(
+          data => {
+              if (data['ok']) {
+                  this.users = data['msg'];   
+                  debugger              
+              } else {
+                debugger
+                console.log('dasdasdsadas')
+              }
+          })
+  }
+
+  getCurrentUsers = () => {
+      return this.http.get(`/api/manage/users/`);
+  }
 
     login = (user) => {
       this.http.post('/api/auth/login', {
