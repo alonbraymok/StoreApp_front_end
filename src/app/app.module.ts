@@ -19,6 +19,7 @@ import { ProductsDisplayerComponent } from './components/products/products-displ
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
+import {MessageService} from './modules/messages/message.service'
 
 
 import{ AppRoutingModule } from './app-routing.module';
@@ -74,7 +75,7 @@ import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
     //   {path: 'adminPanel/users', component: AdminPanelComponent}
     // ])
   ],
-  providers: [UserService, UsersService],
+  providers: [UserService, UsersService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

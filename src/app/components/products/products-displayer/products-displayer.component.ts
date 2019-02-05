@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { ActivatedRoute } from '@angular/router';
 import {ProductService} from '../../../modules/product/product.service'
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import {MessageService} from '../../../modules/messages/message.service'
 
 @Component({
   selector: 'app-products-displayer',
@@ -20,7 +21,8 @@ export class ProductsDisplayerComponent implements OnInit {
   maxval: Number;
   selectedCategory: String;
 
-  constructor(private route: ActivatedRoute, private _productService: ProductService) {  }
+  constructor(private _messageService: MessageService, private route: ActivatedRoute,
+      private _productService: ProductService) {  }
 
   ngOnInit() {
     this.route.url
@@ -33,7 +35,6 @@ export class ProductsDisplayerComponent implements OnInit {
       }
       this._productService.getProductsByCategory(this.productsType).subscribe(data => {
         this.products = data['msg']
-        debugger
       })
       this._productService.getCategories().subscribe(categories => {
         this.categories = categories['msg']
@@ -43,6 +44,26 @@ export class ProductsDisplayerComponent implements OnInit {
     this.maxval = 100;
     this.selectedCategory = '';
   }
+
+  addToCart = (product) => {
+
+    let itemsParsed = []
+    const items = sessionStorage.getItem('superSuisaCart')
+    if (items) {
+      itemsParsed = JSON.parse(items)
+    }
+    itemsParsed.push(product)
+    alert(JSON.stringify(itemsParsed))
+    debugger
+    this.sendMessage(itemsParsed)
+    sessionStorage.setItem('superSuisaCart', JSON.stringify(itemsParsed))
+  }
+
+  sendMessage(products): void {
+    // send message to subscribers via observable subject
+    this._messageService.updatedDataSelection(products);
+}
+
 
   handleSearch = () => {
     this._productService.getProductsWithSearch(this.minval, this.maxval, this.selectedCategory).subscribe(data => {

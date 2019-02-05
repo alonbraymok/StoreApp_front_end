@@ -16,9 +16,7 @@ export class AllProductListComponent implements OnInit {
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    debugger
     this._productService.getCurrentProducts().subscribe(data => this.products = data['msg']);
-    debugger   
   }
 
 }

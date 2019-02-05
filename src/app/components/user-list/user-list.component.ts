@@ -23,7 +23,6 @@ export class UserListComponent implements OnInit {
   getUserWithParam(){
     if(this.clickButton == 'Click here'){
       //this.users = this._usersService.getUserWithParams();
-      debugger
       this.clickButton = 'Back';
       
     }else{
