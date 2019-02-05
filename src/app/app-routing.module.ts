@@ -13,7 +13,7 @@ import { AllProductListComponent } from 'src/app/components/products/product-lis
 import { MilkyListComponent } from 'src/app/components/products/product-list/milky-list/milky-list.component';
 import { MeatListComponent } from 'src/app/components/products/product-list/meat-list/meat-list.component';
 import { SnackListComponent } from 'src/app/components/products/product-list/snack-list/snack-list.component';
-
+import { AboutUsComponent } from 'src/app/components/about-us/about-us.component'
 
 const routes: Routes = [
 
@@ -22,6 +22,7 @@ const routes: Routes = [
       {path: 'products/meat', component: ProductsComponent},
       {path: 'products/milky', component: ProductsComponent},
       {path: 'products/snacks', component: ProductsComponent},
+      {path: 'aboutUs', component: AboutUsComponent},
       {path: 'footer', component: FooterComponent},
       {path: 'admin-panel', component: AdminPanelComponent, 
            children: [ {path: 'user-list', component: UserListComponent},
