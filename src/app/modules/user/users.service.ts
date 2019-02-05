@@ -27,6 +27,18 @@ export class UsersService {
           })
   }
 
+  sendOrder = (email, products) => {
+    this.http.post(`/api/manage/users/${email}`, products).subscribe(
+      data => {
+        if (data['ok']) {
+          alert('OK!!')
+        } else {
+          alert('FAILED')
+        }
+      }
+    )
+  }
+
   getCurrentUsers = () => {
       return this.http.get(`/api/manage/users/`);
   }

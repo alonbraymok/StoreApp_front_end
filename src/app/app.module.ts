@@ -8,7 +8,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { MainheroComponent } from './components/home/mainhero/mainhero.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { LoginComponent } from './components/layout/login/login.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import {RouterModule} from '@angular/router';
@@ -19,14 +19,11 @@ import { ProductsDisplayerComponent } from './components/products/products-displ
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
-<<<<<<< HEAD
 import { DataService } from './modules/data.service'
-=======
-import {MessageService} from './modules/messages/message.service'
 
->>>>>>> 1db38e3fb0524f44f95bc2dff7c0c1af2d891a3d
 
-import{ AppRoutingModule } from './app-routing.module';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
@@ -39,6 +36,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
 import { EditUserInfoComponent } from './components/edit-user-info/edit-user-info.component';
 import { EditProductInfoComponent } from './components/edit-product-info/edit-product-info.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { GoogleMapComponent } from './components/about-us/google-map/google-map.component';
 
 @NgModule({
   declarations: [
@@ -64,13 +63,17 @@ import { EditProductInfoComponent } from './components/edit-product-info/edit-pr
     CartComponent,
     D3GraghComponent,
     EditUserInfoComponent,
-    EditProductInfoComponent
+    EditProductInfoComponent,
+    AboutUsComponent,
+    GoogleMapComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyBQpoUSTYCOeaOLrvaXwRWJFkiMH3ghGks'}),
+    NgbModule.forRoot()
     // RouterModule.forRoot([
     //   {path: '', component: HomeComponent},
     //   {path: 'products/meat', component: ProductsComponent},

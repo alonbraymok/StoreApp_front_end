@@ -27,6 +27,7 @@
                     <td>{{product.name}}</td>
                     <td>{{product.price}}₪</td>
                     <td>{{product.type}}</td>
+                    <button (click)="removeItem(product)">remove item</button>
                   </tr>
                 </tbody>
               </table>
@@ -34,7 +35,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="resetOrder()">Buy Now!</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="sendOrder()">Buy Now!</button>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@
 
 <div class="row justify-content-center">
     <div *ngFor="let product of products" class="card col-auto customCard shadow-sm" style="width: 18rem;">
-      <h6 class="card-header border-0 text-center">Title of product</h6>
+      <h6 class="card-header border-0 text-center">{{product.type}}</h6>
         <img class="card-img-top" src={{product.image}}>
         <div class="card-body text-center">
           <h5 class="card-title">{{product.name}}</h5>

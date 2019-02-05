@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { ActivatedRoute } from '@angular/router';
 import {ProductService} from '../../../modules/product/product.service'
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import {MessageService} from '../../../modules/messages/message.service'
+import {DataService} from '../../../modules/data.service'
 
 @Component({
   selector: 'app-products-displayer',
@@ -21,7 +21,7 @@ export class ProductsDisplayerComponent implements OnInit {
   maxval: Number;
   selectedCategory: String;
 
-  constructor(private _messageService: MessageService, private route: ActivatedRoute,
+  constructor(private _dataService: DataService, private route: ActivatedRoute,
       private _productService: ProductService) {  }
 
   ngOnInit() {
@@ -53,15 +53,14 @@ export class ProductsDisplayerComponent implements OnInit {
       itemsParsed = JSON.parse(items)
     }
     itemsParsed.push(product)
-    alert(JSON.stringify(itemsParsed))
-    debugger
     this.sendMessage(itemsParsed)
     sessionStorage.setItem('superSuisaCart', JSON.stringify(itemsParsed))
   }
 
   sendMessage(products): void {
     // send message to subscribers via observable subject
-    this._messageService.updatedDataSelection(products);
+    debugger
+    this._dataService.changeMessage(products);
 }
 
 
