@@ -19,7 +19,12 @@ import { ProductsDisplayerComponent } from './components/products/products-displ
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
+<<<<<<< HEAD
 import { DataService } from './modules/data.service'
+=======
+import {MessageService} from './modules/messages/message.service'
+
+>>>>>>> 1db38e3fb0524f44f95bc2dff7c0c1af2d891a3d
 
 import{ AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component';

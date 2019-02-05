@@ -15,23 +15,22 @@
                 <thead class="thead-light">
                   <tr>
                     <th>#</th>
+                    {{message}}
                     <th>Product name</th> 
-                    <th>Product description</th>
-                    <th>Product Category</th> 
-                    <th>Product Price</th>
+                    <th>Product price</th>
+                    <th>Product type</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let product of products; let i = index">
                     <td>{{i + 1}}</td>
-                    <td>{{product.productName}}</td>
-                    <td>{{product.productDesc}}</td>
-                    <td>{{product.productCategory}}</td>
-                    <td>{{product.productPrice}}$</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}₪</td>
+                    <td>{{product.type}}</td>
                   </tr>
                 </tbody>
               </table>
-              <label>Total Price: {{totalPrice}}$ </label>
+              <label>Total Price: {{totalPrice}}₪ </label>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

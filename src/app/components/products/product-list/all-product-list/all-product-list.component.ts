@@ -29,6 +29,7 @@ export class AllProductListComponent implements OnInit {
   this.editProduct = new ProductWithId(id,name,type,price,"",supplier);  
   this._dataService.changeMessage(this.editProduct);
     
+    this._productService.getCurrentProducts().subscribe(data => this.products = data['msg']);
   }
 
 }
