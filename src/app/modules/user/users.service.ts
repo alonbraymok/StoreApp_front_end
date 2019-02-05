@@ -1,4 +1,4 @@
-import {User} from './user.model'
+import {User, UserWithId} from './user.model'
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
@@ -71,6 +71,11 @@ export class UsersService {
       )
     }
 
-    getActiveUser = () => this.activeUser
+    getActiveUser = () => this.activeUser;
+
+
+    editUserInfo = (user: UserWithId) => {
+      //send user info with id to find user on data base
+    }
 
 }

@@ -5,3 +5,11 @@ export class Product {
    
     
   }
+
+  export class ProductWithId {
+
+    constructor(public productId: string ,public productName: string, public productType: string,
+     public productPrice: number, public productPicture: string, public productSupplier: string ) {}
+    
+     
+   }

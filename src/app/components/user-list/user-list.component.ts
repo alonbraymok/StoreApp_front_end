@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/modules/user/users.service'
-import { User } from 'src/app/modules/user/user.model'
+import { User, UserWithId } from 'src/app/modules/user/user.model'
+import { DataService} from 'src/app/modules/data.service'
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-  providers: [UsersService]
+  providers: [UsersService,DataService]
 })
 export class UserListComponent implements OnInit {
 
   users: any[];
-
+  user: any;
   clickButton: string ='Click here';
 
-  constructor(private _usersService: UsersService) { }
+  constructor(private _usersService: UsersService, private dataService: DataService) { }
   email: string;
 
   ngOnInit() {
@@ -39,12 +40,17 @@ export class UserListComponent implements OnInit {
       this.users = data['msg']});
   }
 
-  editUser(user: User){
+  editUserInfo(username: string, email: string, password: string, address: string, id: string){
+    console.log(username);
+    this.user = new UserWithId(id,email,password,username,address);
+    debugger
+    this.dataService.changeMessage(this.user);
     
   }
 
   deleteUser(email: string){
     this._usersService.deleteUserByEmail(email);
     this.getCurrentUsers();
+
   }
 }

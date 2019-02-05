@@ -1,3 +1,4 @@
+
 <p>
   To view all users who made one order, 
   sign up for the app yesterday and one of their orders has two products
@@ -25,8 +26,11 @@
       <td>{{user.email}}</td>
       <td>{{user.firstname}}</td>
       <td>{{user.password}}</td>
-      <button type="button" class="btn btn-light" (click)="editUser(user)">Edit</button>
+      <button type="button" class="btn btn-light"data-toggle="modal" data-target="#editUser"
+      (click)="editUserInfo(user.username,user.email,user.password,user.firstname,user._id)" >Edit</button>
       <button type="button" class="btn btn-light" (click)="deleteUser(user)">Remove</button>
     </tr>
   </tbody>
 </table>
+
+<app-edit-user-info></app-edit-user-info>

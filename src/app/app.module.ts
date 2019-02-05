@@ -8,7 +8,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { MainheroComponent } from './components/home/mainhero/mainhero.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { LoginComponent } from './components/layout/login/login.component';
-import { RegisterComponent } from './components/layout/register/register.component';
+
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import {RouterModule} from '@angular/router';
@@ -19,7 +19,7 @@ import { ProductsDisplayerComponent } from './components/products/products-displ
 import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
-
+import { DataService } from './modules/data.service'
 
 import{ AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component';
@@ -32,6 +32,8 @@ import { SnackListComponent } from './components/products/product-list/snack-lis
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { CartComponent } from './components/cart/cart.component';
 import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
+import { EditUserInfoComponent } from './components/edit-user-info/edit-user-info.component';
+import { EditProductInfoComponent } from './components/edit-product-info/edit-product-info.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,6 @@ import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
     MainheroComponent,
     CarouselComponent,
     LoginComponent,
-    RegisterComponent,
     ProductsComponent,
     FooterComponent,
     HomeComponent,
@@ -56,7 +57,9 @@ import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
     SnackListComponent,
     AddProductComponent,
     CartComponent,
-    D3GraghComponent
+    D3GraghComponent,
+    EditUserInfoComponent,
+    EditProductInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,7 @@ import { D3GraghComponent } from './components/d3-gragh/d3-gragh.component';
     //   {path: 'adminPanel/users', component: AdminPanelComponent}
     // ])
   ],
-  providers: [UserService, UsersService],
+  providers: [UserService, UsersService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

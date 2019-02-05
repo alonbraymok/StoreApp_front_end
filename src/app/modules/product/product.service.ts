@@ -1,4 +1,4 @@
-import { Product } from 'src/app/modules/product/product.model'
+import { Product, ProductWithId } from 'src/app/modules/product/product.model'
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 
@@ -40,20 +40,19 @@ export class ProductService {
     }
 
     addNewProduct(product: Product){
-        this.http.put('/api/manage/products/product', product)
+       // this.http.put('/api/manage/products/product', product)
     }
-    getAllMeatProduct(): Product[] {
-        //return all meat product
-        return null;
+    
+    deleteProductByID(id: string) {
+        console.log(id);
+        this.http.delete(`/api/manage/products/${id}`).subscribe(data => console.log(data))
     }
-    getAllMilkyProduct(): Product[]{
-        //return all milky product
-        return null;
+
+    editProduct = (product: ProductWithId) => {
+        debugger
+        //send new product info with id to find product
     }
-    getAllSnackProduct(): Product[]{
-        //return all snack product
-        return null;
-    }
+
     getProductsByOrder(email: string): Product[]{
         //return product of spcific user order by email
         return null;

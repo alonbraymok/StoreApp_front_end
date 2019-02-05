@@ -5,7 +5,9 @@
         <th scope="col">#</th>
         <th scope="col">id</th>
         <th scope="col">Product name</th>
-        <th scope="col">Category</th>
+        <th scope="col">Type</th>
+        <th scope="col">Price</th>
+        <th scope="col">Supplier</th>
         <th scope="col"></th>
         
       </tr>
@@ -16,9 +18,13 @@
         <td>{{product._id}}</td>
         <td>{{product.name}}</td>
         <td>{{product.type}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.supplier}}</td>
         
-        <button type="button" class="btn btn-light">Edit</button>
-        <button type="button" class="btn btn-light">Remove</button>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editProductModal"
+        (click)="editProductInfo(product.name,product.type,product.price,product._id,product.supplier)">Edit</button>
+        <button type="button" class="btn btn-light" (click)="deleteProduct(product._id)" >Remove</button>
       </tr>
     </tbody>
   </table>
+  
