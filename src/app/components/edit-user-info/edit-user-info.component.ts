@@ -37,7 +37,11 @@ export class EditUserInfoComponent implements OnInit {
     debugger
     this.editUser = new UserWithId(this.userId, this.userEmail, this.userPassword, 
     this.userName, this.userAddress);
-    this._usersService.editUserInfo(this.editUser);
+    this._usersService.editUserInfo(this.editUser).subscribe(
+      res => {
+        alert(JSON.stringify(res['msg']))
+      }
+    )
   }
 
 }

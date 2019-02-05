@@ -50,6 +50,7 @@ export class ProductService {
 
     editProduct = (product: ProductWithId) => {
         debugger
+        return this.http.put(`/api/manage/products/${product.productId}`, product)
         //send new product info with id to find product
     }
 

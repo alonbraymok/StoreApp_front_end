@@ -35,7 +35,10 @@ export class EditProductInfoComponent implements OnInit {
   editNewProduct(){
     this.editProduct = new ProductWithId(this.productID, this.productName, this.productType, 
       this.productPrice, this.productImg, this.productSupplier);
-      this._productService.editProduct(this.editProduct);
+      this._productService.editProduct(this.editProduct).subscribe(modified => {
+        alert(JSON.stringify(modified['msg']))
+        
+      })
   }
 
 }
