@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes, CanActivate} from '@angular/router';
 
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-
 import {APP_BASE_HREF} from '@angular/common';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { UserListComponent } from './components/user-list/user-list.component';
@@ -15,6 +14,7 @@ import { MeatListComponent } from 'src/app/components/products/product-list/meat
 import { SnackListComponent } from 'src/app/components/products/product-list/snack-list/snack-list.component';
 import { AboutUsComponent } from 'src/app/components/about-us/about-us.component'
 
+
 const routes: Routes = [
 
       {path: '', component: HomeComponent},
@@ -24,7 +24,7 @@ const routes: Routes = [
       {path: 'products/snacks', component: ProductsComponent},
       {path: 'aboutUs', component: AboutUsComponent},
       {path: 'footer', component: FooterComponent},
-      {path: 'admin-panel', component: AdminPanelComponent, 
+      {path: 'admin-panel',canActivate: [HomeComponent], component: AdminPanelComponent, 
            children: [ {path: 'user-list', component: UserListComponent},
                        {path: 'product-list', component: ProductListComponent,
                         children:[
@@ -39,7 +39,7 @@ const routes: Routes = [
 @NgModule({
   exports: [ RouterModule ],
   imports: [ RouterModule.forRoot(routes) ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+  providers: [HomeComponent, {provide: APP_BASE_HREF, useValue : '/' }]
 })
 
 export class AppRoutingModule { }

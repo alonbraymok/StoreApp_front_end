@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppComponent } from './app.component';
 import {NbLayoutModule} from 'nebular';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -11,7 +11,7 @@ import { LoginComponent } from './components/layout/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
-import {RouterModule} from '@angular/router';
+import {RouterModule, CanActivate} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { IntroductionComponent } from './components/products/introduction/introduction.component';
@@ -42,6 +42,7 @@ import { GoogleMapComponent } from './components/about-us/google-map/google-map.
 import { RealTimeMessageComponent } from './components/real-time-message/real-time-message.component';
 import { AddLocationPipe } from './modules/pipes/add-location.pipe';
 import { CmsComponent } from './components/cms/cms.component';
+import {PiechartComponent} from './components/piechart/piechart.component'
 
 import { DocumentListComponent } from './document-list/document-list.component';
 import { DocumentComponent } from './document/document.component';
@@ -76,6 +77,7 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
     GoogleMapComponent,
     RealTimeMessageComponent,
     AddLocationPipe,
+    PiechartComponent,
     DocumentListComponent,
     DocumentComponent
   ],
@@ -86,6 +88,9 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
     AppRoutingModule,
     BrowserModule,
     FormsModule,
+    BrowserModule,
+    // RouterModule.forRoot(routes),
+    ChartsModule,
     SocketIoModule.forRoot(config),
     AgmCoreModule.forRoot({apiKey: 'AIzaSyBQpoUSTYCOeaOLrvaXwRWJFkiMH3ghGks'}),
     NgbModule.forRoot()
@@ -103,4 +108,6 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
   providers: [UserService, UsersService, DataService, WebSocketService, ChatService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}

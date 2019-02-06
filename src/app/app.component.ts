@@ -7,6 +7,7 @@ import { User } from './modules/user/user.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'front-end';
   currentUser: User
   public currentRoute = String;
@@ -14,6 +15,7 @@ export class AppComponent {
   setNewPostfixURL(type) {
     this.currentRoute = type;
   }
+  
   setUser(user) {
     this.currentUser = user
   }
