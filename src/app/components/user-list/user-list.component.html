@@ -1,15 +1,23 @@
-
-<p>
-  To view all users who made one order, 
-  sign up for the app yesterday and one of their orders has two products
-  <input [(ngModel)]='clickButton' type="button" value="Click here" (click)="getUserWithParam()">
-</p>
-    <div class="input-group mb-3">
-        <input [(ngModel)]='search' type="text" class="" placeholder="username" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getUserByUsername()" >Search</button>
+<div >
+  <div class="container">
+      <div class="row">
+        <div class="col-sm">
+            <input placeholder="Username" type="text" [(ngModel)]="nameLike" id="inputGroupSelect01">
         </div>
+        <div class="col-sm">
+            <span class="input-group-text">Min Orders: {{minVal}}</span>
+            <input [(ngModel)]="minVal" type="range" class="custom-range" id="customRange1">
+        </div>
+        <div class="col-sm">
+            <span class="input-group-text">Max Orders: {{maxVal}}</span>
+            <input [(ngModel)]="maxVal" type="range" class="custom-range" id="customRange2">
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-primary btn-sm" (click)="handleSearch()">Search</button>
       </div>
+      </div>
+    </div>
+</div>
 <table class="table">
   <thead class="thead-light">
     <tr>

@@ -41,7 +41,10 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { GoogleMapComponent } from './components/about-us/google-map/google-map.component';
 import { RealTimeMessageComponent } from './components/real-time-message/real-time-message.component';
 import { AddLocationPipe } from './modules/pipes/add-location.pipe';
-
+import { DocumentListComponent } from './document-list/document-list.component';
+import { DocumentComponent } from './document/document.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,13 +73,18 @@ import { AddLocationPipe } from './modules/pipes/add-location.pipe';
     AboutUsComponent,
     GoogleMapComponent,
     RealTimeMessageComponent,
-    AddLocationPipe
+    AddLocationPipe,
+    DocumentListComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    SocketIoModule.forRoot(config),
     AgmCoreModule.forRoot({apiKey: 'AIzaSyBQpoUSTYCOeaOLrvaXwRWJFkiMH3ghGks'}),
     NgbModule.forRoot()
     // RouterModule.forRoot([
