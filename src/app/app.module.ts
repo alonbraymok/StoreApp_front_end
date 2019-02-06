@@ -41,6 +41,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { GoogleMapComponent } from './components/about-us/google-map/google-map.component';
 import { RealTimeMessageComponent } from './components/real-time-message/real-time-message.component';
 import { AddLocationPipe } from './modules/pipes/add-location.pipe';
+import { CmsComponent } from './components/cms/cms.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AddLocationPipe } from './modules/pipes/add-location.pipe';
     AboutUsComponent,
     GoogleMapComponent,
     RealTimeMessageComponent,
-    AddLocationPipe
+    AddLocationPipe,
+    CmsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,18 @@
-
 <p>
-  To view all users who made one order, 
+  To view all users who made one order,
   sign up for the app yesterday and one of their orders has two products
   <input [(ngModel)]='clickButton' type="button" value="Click here" (click)="getUserWithParam()">
 </p>
-    <div class="input-group mb-3">
-        <input [(ngModel)]='search' type="text" class="" placeholder="username" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getUserByUsername()" >Search</button>
-        </div>
-      </div>
+<app-cms></app-cms>
+<div class="input-group mb-3 biba">
+    
+  <input [(ngModel)]='search' type="text" class="searchBtn" placeholder="username" aria-label="Recipient's username"
+    aria-describedby="button-addon2">
+  <div class="input-group-append searchInput">
+    <button class="btn btn-outline-secondary " type="button" id="button-addon2" (click)="getUserByUsername()">Search</button>
+  </div>
+  
+</div>
 <table class="table">
   <thead class="thead-light">
     <tr>
@@ -20,7 +23,7 @@
       <th scope="col">First name</th>
       <th scope="col">Password</th>
       <th scope="col"></th>
-      
+
     </tr>
   </thead>
   <tbody>
@@ -31,8 +34,7 @@
       <td>{{user.email}}</td>
       <td>{{user.firstname}}</td>
       <td>{{user.password}}</td>
-      <button type="button" class="btn btn-light"data-toggle="modal" data-target="#editUser"
-      (click)="editUserInfo(user.username,user.email,user.password,user.firstname,user._id)" >Edit</button>
+      <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editUser" (click)="editUserInfo(user.username,user.email,user.password,user.firstname,user._id)">Edit</button>
       <button type="button" class="btn btn-light" (click)="deleteUser(user)">Remove</button>
     </tr>
   </tbody>

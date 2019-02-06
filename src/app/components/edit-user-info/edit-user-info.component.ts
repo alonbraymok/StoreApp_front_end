@@ -14,7 +14,7 @@ export class EditUserInfoComponent implements OnInit {
   userName: string
   userPassword: string
   userEmail: string
-  userAddress: string
+  firstname: string
   userId: string;
 
   editUser: UserWithId;
@@ -27,7 +27,7 @@ export class EditUserInfoComponent implements OnInit {
     this.userName = data["username"];
     this.userPassword = data["password"];
     this.userEmail = data["email"];
-    this.userAddress = data["address"];
+    this.firstname = data["firstname"];
     });
        
   }
@@ -35,7 +35,7 @@ export class EditUserInfoComponent implements OnInit {
   editUserInfo(){
     
     this.editUser = new UserWithId(this.userId, this.userEmail, this.userPassword, 
-    this.userName, this.userAddress);
+    this.userName, this.firstname);
     this._usersService.editUserInfo(this.editUser).subscribe(
       res => {
         alert(JSON.stringify(res['msg']))

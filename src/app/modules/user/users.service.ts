@@ -93,4 +93,8 @@ export class UsersService {
       return this.http.get(`/api/manage/users/${username}`);
     }
 
+    getCharStatic = (char: string) => {
+      return this.http.post('',char);
+    }
+
 }
