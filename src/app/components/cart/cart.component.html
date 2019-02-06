@@ -27,13 +27,22 @@
                     <td>{{product.name}}</td>
                     <td>{{product.price}}₪</td>
                     <td>{{product.type}}</td>
-                    <button (click)="removeItem(product)">remove item</button>
+                    <input type="image" src="https://image.flaticon.com/icons/svg/61/61848.svg"
+                    alt="Submit" width="30" height="30" style="position: relative" (click)="removeItem(product)" >
                   </tr>
                 </tbody>
               </table>
+              
               <label>Total Price: {{totalPrice}}₪ </label>
+              <input type="image" value="reset cart" src="https://cdn2.iconfinder.com/data/icons/shopping-e-commerce-2-1/32/Remove-All-Cart-delete-Trolley-512.png" 
+              style="float: right;" alt="Submit" width="30" height="30" (click)="resetCart()">
+              <div>
+              
+            </div>
         </div>
+       >
         <div class="modal-footer">
+          
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="sendOrder()">Buy Now!</button>
         </div>

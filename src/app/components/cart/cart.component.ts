@@ -101,4 +101,8 @@ export class CartComponent implements OnDestroy, OnInit {
     this._producrService.restOrderForUser(this.email);
   }
 
+  resetCart(){
+    this.products = [];
+    this.totalPrice = 0;
+  }
 }
