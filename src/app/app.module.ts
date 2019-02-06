@@ -77,7 +77,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
     RealTimeMessageComponent,
     AddLocationPipe,
     DocumentListComponent,
-    DocumentComponent
+    DocumentComponent,
+    CmsComponent
   ],
   imports: [
     BrowserModule,

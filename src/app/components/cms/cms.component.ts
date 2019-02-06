@@ -17,7 +17,9 @@ export class CmsComponent implements OnInit {
     
   }
   statisticSearch(){
+    debugger
     this._userService.getCharStatic(this.char).subscribe((data) =>{
+      debugger
       console.log(data['msg']);
       this.result = data['msg'];
       this.char = "";

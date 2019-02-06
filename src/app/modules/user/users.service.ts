@@ -99,7 +99,8 @@ export class UsersService {
     }
 
     getCharStatic = (char: string) => {
-      return this.http.post('',char);
+      debugger
+      return this.http.post('/api/manage/users/cms',{char});
     }
 
 }
