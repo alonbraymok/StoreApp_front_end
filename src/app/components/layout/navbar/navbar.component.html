@@ -25,7 +25,7 @@
             <li class="nav-item">
                 <a routerLink="aboutUs" class="nav-link" href="#">About Us</a>
             </li>
-            <li class="nav-item">
+            <li *ngIf="isAdmin()" class="nav-item">
                 <a routerLink="admin-panel" class="nav-link disabled" href="#">Admin Panel</a>
             </li>
         </ul>

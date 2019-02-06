@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   @Output() urlChanged: EventEmitter<any> = new EventEmitter();
   showLoginModal: Boolean = true;
   @Input() user: User;
-  newUser: User;
+  activeUser: any;
   constructor(private _userService: UserService) {
    }
 
@@ -21,6 +21,11 @@ export class NavbarComponent implements OnInit {
 
   addNewUser(){
     
+  }
+
+  isAdmin = () => {
+    if (!this.activeUser) return false
+    return this.activeUser.isAdmin
   }
 
   notifyObservers(postfix) {
@@ -42,10 +47,12 @@ export class NavbarComponent implements OnInit {
   
   userLoggedIn = () => {
     const activeUser = sessionStorage.getItem('activeUser')
+    this.activeUser = JSON.parse(activeUser)
     return sessionStorage.getItem('activeUser') !== null
   }
 
   logoutUser = () => {
+    this.activeUser = {}
     sessionStorage.removeItem('activeUser')
   }
 

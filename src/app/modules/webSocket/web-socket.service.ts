@@ -7,7 +7,7 @@ export class WebSocketService {
 
   private subject: Rx.Subject<MessageEvent>;
 
-  public connect(url): Rx.Subject<MessageEvent> {
+  public connect(url): Rx.Subject<MessageEvent> { 
     if (!this.subject) {
       this.subject = this.create(url);
       console.log("Successfully connected: " + url);

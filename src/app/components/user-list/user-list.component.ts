@@ -17,6 +17,9 @@ export class UserListComponent implements OnInit {
   search: string;
   constructor(private _usersService: UsersService, private dataService: DataService) { }
   email: string;
+  minVal: Number;
+  maxVal: Number;
+  nameLike: String;
 
   ngOnInit() {
     this.getCurrentUsers();
@@ -31,7 +34,14 @@ export class UserListComponent implements OnInit {
       //this.users = this._usersService.getCurrentUsers();
       this.clickButton = 'Click here';
     }
+  }
 
+  handleSearch() {
+    const users = this._usersService.findWithQuery(this.minVal, this.maxVal, this.nameLike).subscribe(
+      result => {
+        this.users = result['msg']
+      }
+    )
   }
 
   getCurrentUsers(){

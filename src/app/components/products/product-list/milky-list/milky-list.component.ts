@@ -20,10 +20,13 @@ export class MilkyListComponent implements OnInit {
   }
   deleteProduct(id: string){
     this._productService.deleteProductByID(id);
+    this._productService.getProductsByCategory('milky').subscribe(data => this.products = data['msg'])
+
   }
   editProductInfo(name: string, type: string, price: number, id: string, supplier: string){
     this.editProduct = new ProductWithId(id,name,type,price,"",supplier);  
     this._dataService.changeMessage(this.editProduct);
-      
+    this._productService.getProductsByCategory('milky').subscribe(data => this.products = data['msg'])
+
     }
 }

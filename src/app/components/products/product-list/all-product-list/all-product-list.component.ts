@@ -17,24 +17,24 @@ export class AllProductListComponent implements OnInit {
   constructor(private _productService: ProductService, private _dataService: DataService) { }
 
   ngOnInit() {
-    this._productService.getCurrentProducts().subscribe(data => {debugger; this.products = data['msg']});
+    this._productService.getCurrentProducts().subscribe(data => { this.products = data['msg']});
      
   }
 
   deleteProduct(id: string){
     this._productService.deleteProductByID(id);
+    this._productService.getCurrentProducts().subscribe(data => { this.products = data['msg']});
     
   }
   editProductInfo(name: string, type: string, price: number, id: string, supplier: string){
   this.editProduct = new ProductWithId(id,name,type,price,"",supplier);  
   this._dataService.changeMessage(this.editProduct);
-    
-    this._productService.getCurrentProducts().subscribe(data => this.products = data['msg']);
+  this._productService.getCurrentProducts().subscribe(data => { this.products = data['msg']});
   }
 
   getProductByName(){
     
-    this._productService.getProductByName(this.search).subscribe( data => {debugger; this.products = data['msg']});
+    this._productService.getProductByName(this.search).subscribe( data => { this.products = data['msg']});
   }
 
 }
