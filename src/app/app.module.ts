@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from './modules/user/user.service';
 import { UsersService } from './modules/user/users.service';
 import { DataService } from './modules/data.service'
-
+import { WebSocketService} from './modules/webSocket/web-socket.service';
+import { ChatService } from './modules/webSocket/chat.service';
 
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,8 @@ import { EditUserInfoComponent } from './components/edit-user-info/edit-user-inf
 import { EditProductInfoComponent } from './components/edit-product-info/edit-product-info.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { GoogleMapComponent } from './components/about-us/google-map/google-map.component';
+import { RealTimeMessageComponent } from './components/real-time-message/real-time-message.component';
+import { AddLocationPipe } from './modules/pipes/add-location.pipe';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,9 @@ import { GoogleMapComponent } from './components/about-us/google-map/google-map.
     EditUserInfoComponent,
     EditProductInfoComponent,
     AboutUsComponent,
-    GoogleMapComponent
+    GoogleMapComponent,
+    RealTimeMessageComponent,
+    AddLocationPipe
   ],
   imports: [
     BrowserModule,
@@ -85,7 +90,7 @@ import { GoogleMapComponent } from './components/about-us/google-map/google-map.
     //   {path: 'adminPanel/users', component: AdminPanelComponent}
     // ])
   ],
-  providers: [UserService, UsersService, DataService],
+  providers: [UserService, UsersService, DataService, WebSocketService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

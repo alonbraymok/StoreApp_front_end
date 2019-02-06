@@ -1,34 +1,30 @@
-
-<agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
-    <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)='markerDragEnd($event)'></agm-marker>
-  </agm-map>
-
-  <div class="container-fluid">
-      <div class='row'>
-        <div class="form-group">
-          <label class='col-sm-2'>Address Line 1</label>
-          <input class='col-sm-10' type='text' [(ngModel)]='location.address_level_1' class="form-control" placeholder='Office, Apt, Home, Street'>
-        </div>
-        <div class="form-group">
-          <label class='col-sm-2'>Address Line 2</label>
-          <input class='col-sm-10'  [(ngModel)]='location.address_level_2' class='form-control' placeholder='City'/>
-        </div>
-     
-        <div class="form-group">
-          <label class='col-sm-2'>State / Province / Region</label>
-          <input class='col-sm-10'  [(ngModel)]='location.address_state' class='form-control' placeholder='State'>
-        </div>
-     
-        <div class="form-group">
-          <label class='col-sm-2'>Country</label>
-          <input class='col-sm-10'  [(ngModel)]='location.address_country' class='form-control' placeholder='State'>
-        </div>
-     
-        <div class="form-group">
-          <label class='col-sm-2'>Postal / Zip code</label>
-          <input class='col-sm-10'  [(ngModel)]='location.address_zip' class='form-control' placeholder='Zip'>
-        </div>
-     
-        <button (click)='updateOnMap()' type="submit" class="btn btn-primary">Search</button>
-      </div>
-    </div>
+<style>
+  </style>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!------ Include the above in your HEAD tag ---------->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <div class="container">
+     <aside>
+         <h1 class="text-center">Contact Address</h1>
+     </aside>
+   <hr>
+   <div class="row">
+     <div class="col-sm-8">
+       <iframe src="https://www.google.com/maps?q=[tel aviv]&output=embed" width="730" height="520" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+   
+   </div>
+ </div>
+ <div id="fb-root"></div>
+ <script>
+ (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = 'https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.1&appId=182846438483291&autoLogAppEvents=1';
+         fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));</script>
+ 
+ <br><br>

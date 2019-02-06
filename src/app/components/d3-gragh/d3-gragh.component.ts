@@ -10,6 +10,7 @@ export class D3GraghComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

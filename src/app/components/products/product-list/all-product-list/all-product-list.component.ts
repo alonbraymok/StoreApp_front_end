@@ -13,7 +13,7 @@ export class AllProductListComponent implements OnInit {
 
   products: any[] = [];
   editProduct: any;
-
+  search: string;
   constructor(private _productService: ProductService, private _dataService: DataService) { }
 
   ngOnInit() {
@@ -30,6 +30,10 @@ export class AllProductListComponent implements OnInit {
   this._dataService.changeMessage(this.editProduct);
     
     this._productService.getCurrentProducts().subscribe(data => this.products = data['msg']);
+  }
+
+  getProductByName(){
+    this._productService.getProductByName(this.search).subscribe( data => {debugger; this.products = data['msg']});
   }
 
 }

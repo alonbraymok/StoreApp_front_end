@@ -39,6 +39,11 @@ export class ProductService {
         return this.http.get(`/api/products/`);
     }
 
+    getProductByName(name: string){
+        debugger
+        return this.http.get(`/api/products/${name}`);
+    }
+
     addNewProduct(product: Product){
        // this.http.put('/api/manage/products/product', product)
     }

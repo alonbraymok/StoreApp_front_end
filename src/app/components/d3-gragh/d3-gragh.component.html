@@ -1,40 +1,44 @@
-<html>
-<head></head>
-<body>
-<div id="myPie">xcxzcxz</div>
-<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
-<script src="https://d3js.org/d3-selection.v1.js"></script>
- 
-<script src="./d3pie.js"></script>
-<script src="./d3.min.js"></script>
+
 <script>
-    var pie = new d3pie("myPie", {
-    header: {
-        title: {
-            text: "A very simple example pie"
-        }
-    },
-    data: {
-        content: [
-            { label: "JavaScript", value: 50 },
-            { label: "Ruby", value: 20 },
-            { label: "Java", value: 30},
-        ]
-     },
- 
-    //Here further operations/animations can be added like click event, cut out the clicked pie section.
-     callbacks: {
-        onMouseoverSegment: function(info) {
-            console.log("mouse in", info);
-        },
-        onMouseoutSegment: function(info) {
-            console.log("mouseout:", info);
-        }
-    }
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
       
-});
- 
-</script>
-<canvas id="myPie" width="256" height="256" ></canvas>
-</body>
-</html>
+      </script>
+
+<canvas id="myChart" style="max-width: 500px;"></canvas>
+

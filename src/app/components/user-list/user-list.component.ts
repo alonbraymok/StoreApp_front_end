@@ -14,7 +14,7 @@ export class UserListComponent implements OnInit {
   users: any[];
   user: any;
   clickButton: string ='Click here';
-
+  search: string;
   constructor(private _usersService: UsersService, private dataService: DataService) { }
   email: string;
 
@@ -51,5 +51,9 @@ export class UserListComponent implements OnInit {
     this._usersService.deleteUserByEmail(email);
     this.getCurrentUsers();
 
+  }
+  getUserByUsername(){
+    debugger
+    this._usersService.getUserByUsername(this.search).subscribe(data =>{debugger; this.users = data['msg']});
   }
 }
