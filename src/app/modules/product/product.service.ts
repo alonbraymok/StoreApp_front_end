@@ -40,12 +40,12 @@ export class ProductService {
     }
 
     getProductByName(name: string){
-        debugger
-        return this.http.get(`/api/products/${name}`);
+        return this.http.get(`/api/manage/products/${name}`);
     }
 
-    addNewProduct(product: Product){
-       // this.http.put('/api/manage/products/product', product)
+    addNewProduct(product: Product) {
+        debugger
+        this.http.post('/api/manage/products', product).subscribe(data => console.log(data))
     }
     
     deleteProductByID(id: string) {
@@ -54,7 +54,6 @@ export class ProductService {
     }
 
     editProduct = (product: ProductWithId) => {
-        debugger
         return this.http.put(`/api/manage/products/${product.productId}`, product)
         //send new product info with id to find product
     }

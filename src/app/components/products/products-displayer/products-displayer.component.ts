@@ -58,8 +58,6 @@ export class ProductsDisplayerComponent implements OnInit {
   }
 
   sendMessage(products): void {
-    // send message to subscribers via observable subject
-    debugger
     this._dataService.changeMessage(products);
 }
 

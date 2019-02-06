@@ -42,7 +42,7 @@ export class UserListComponent implements OnInit {
   editUserInfo(username: string, email: string, password: string, address: string, id: string){
     console.log(username);
     this.user = new UserWithId(id,email,password,username,address);
-    debugger
+    
     this.dataService.changeMessage(this.user);
     
   }
@@ -53,7 +53,6 @@ export class UserListComponent implements OnInit {
 
   }
   getUserByUsername(){
-    debugger
     this._usersService.getUserByUsername(this.search).subscribe(data =>{debugger; this.users = data['msg']});
   }
 }

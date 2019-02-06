@@ -33,6 +33,7 @@ export class AllProductListComponent implements OnInit {
   }
 
   getProductByName(){
+    
     this._productService.getProductByName(this.search).subscribe( data => {debugger; this.products = data['msg']});
   }
 

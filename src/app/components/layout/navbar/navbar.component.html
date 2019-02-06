@@ -38,7 +38,7 @@
                 <a class="nav-link loginButton" (click)="logoutUser()">Log Out</a>
             </li>
             <li>
-                    <app-cart></app-cart>
+                    <app-cart *ngIf="userLoggedIn()"></app-cart>
             </li>
         </ul>
     </div>

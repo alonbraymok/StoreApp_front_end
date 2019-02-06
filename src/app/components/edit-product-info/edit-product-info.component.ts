@@ -22,7 +22,6 @@ export class EditProductInfoComponent implements OnInit {
 
   ngOnInit() {
     this._dataService.currentMessage.subscribe(data => {
-      debugger
       this.productName = data["productName"];
       this.productType = data["productType"];
       this.productPrice = data["productPrice"];

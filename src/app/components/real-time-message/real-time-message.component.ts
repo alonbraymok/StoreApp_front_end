@@ -28,7 +28,6 @@ export class RealTimeMessageComponent implements OnInit {
     console.log('new message from client to websocket: ');
     this.message.author = this.myAuthor;
     this.message.message = this.myMessage;
-    debugger
 		this.chatService.messages.next(this.message);
     this.message.message = '';
     this.myAuthor = '';

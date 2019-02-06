@@ -90,7 +90,7 @@ export class UsersService {
        {address: user.address,email: user.email,password: user.password,username: user.username})
     }
     getUserByUsername = (username: string) => {
-      return this.http.get('/api/manage/users/${username}');
+      return this.http.get(`/api/manage/users/${username}`);
     }
 
 }

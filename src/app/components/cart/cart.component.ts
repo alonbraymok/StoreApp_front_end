@@ -34,7 +34,6 @@ export class CartComponent implements OnDestroy, OnInit {
 
   setProducts = (products) => {
     if (isArray(products)) {
-      debugger
       this.products = products
       let sum = 0
       products.forEach(product => {
@@ -62,7 +61,7 @@ export class CartComponent implements OnDestroy, OnInit {
   }
 
   ngOnChanges() {
-    debugger
+    
   }
 
   sendOrder = () => {
@@ -82,6 +81,8 @@ export class CartComponent implements OnDestroy, OnInit {
       sum += product.price
     });
     this.totalPrice = sum
+    sessionStorage.removeItem('superSuisaCart')
+    sessionStorage.setItem('superSuisaCart', JSON.stringify(this.products))
   }
 
   getProducts = () => {
@@ -96,12 +97,9 @@ export class CartComponent implements OnDestroy, OnInit {
     })
   }
 
-  resetOrder(){
-    alert('order resert');
-    this._producrService.restOrderForUser(this.email);
-  }
-
   resetCart(){
+    alert('order resert');
+    sessionStorage.removeItem('superSuisaCart')
     this.products = [];
     this.totalPrice = 0;
   }
