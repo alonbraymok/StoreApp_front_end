@@ -1,0 +1,21 @@
+.bibaInput{
+    height:1.55rem;
+    width:7rem !important;
+    text-align:center;
+    margin-right:0.4rem;
+    margin-left:0.3rem;
+}
+.bibaSearchContainer{
+    display:block;
+    border:0px;
+}
+.bibaSearch{
+    width:4rem;
+    text-align: center;
+    padding: 0px;
+    margin-top:0.0372rem;
+}
+.input-group{
+    height:0.60rem;
+    
+}

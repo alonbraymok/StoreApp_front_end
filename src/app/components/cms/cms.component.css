@@ -1,8 +1,52 @@
 .searchBtn {
-    width:30%;
-    height:20px;
+    margin-bottom: 0rem;
+    /* text-transform: uppercase; */
+    /* padding: .325rem 0.825rem; */
+    width:100px;
+    height: 25px;
+    font-size: .85rem;
+    font:bold;
+    line-height: 25px;
+    text-align: center;
+    display:inline-block;
+    border: 1px solid black !important;
+    border-radius: 150px !important;
+    transition: all .2s ease-in-out;
+    color: #45B39D;
+    background-color:blue !important;
+    box-shadow: 0 12px 35px -10px rgba(76, 200, 209, 0.55), 0 8px 10px -5px rgba(0,0,0,.09), 0 4px 25px -2px rgba(0,0,0,.14);
+    margin-right:0.3rem;
 }
 .searchInput{
-    width:30%;
-    height:20px;
+    width:8rem;
+    height:  1.45rem;
+    margin-right:0.3rem;
+}
+.btn-primary{
+    font-size: .65rem;
+    font-weight: 600;
+    height:  1.45rem;
+    text-align:center;
+    text-transform: uppercase;
+    width:5rem;
+    border-radius:2px;
+}
+.form-group{
+    height:3rem;
+    width:23rem;
+}
+.col-sm-2{
+    margin-left:0.7rem;
+    line-height: 1.45rem;
+    padding:0px
+}
+.col-form-label{
+    margin-left:0.7rem;
+    padding:0px ;
+    line-height: 1.45rem;
+} 
+.col-form-label-sm{
+    margin-left:0.7rem;
+    padding:0px;
+    line-height: 1.45rem;
 }

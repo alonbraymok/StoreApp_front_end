@@ -1,7 +1,8 @@
-<app-cms></app-cms>
+
 <div >
   <div class="container">
       <div class="row">
+          
         <div class="col-sm">
             <input placeholder="Username" type="text" [(ngModel)]="nameLike" id="inputGroupSelect01">
         </div>
@@ -15,6 +16,9 @@
         </div>
         <div class="col-sm">
           <button class="btn btn-primary btn-sm" (click)="handleSearch()">Search</button>
+      </div>
+      <div class="col-sm">
+          <app-cms></app-cms>
       </div>
       </div>
     </div>
