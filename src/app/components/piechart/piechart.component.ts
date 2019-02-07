@@ -17,7 +17,7 @@ export class PiechartComponent implements OnInit {
       this.pieChartLabels = data['msg'];
       
       this.pieChartLabels.forEach(label => { 
-        this._productService.getProductsByCategory(label).subscribe(data => {debugger
+        this._productService.getProductsByCategoryPie(label).subscribe(data => {debugger
           console.log(data['msg'].length)
           this.pieChartData.push(data['msg'].length);
         });
@@ -27,8 +27,6 @@ export class PiechartComponent implements OnInit {
   
   ngOnInit() {
  
-        
-   
   }
 
 }

@@ -31,6 +31,10 @@ export class ProductService {
         return this.http.get(`/api/products/${category}`)
     }
 
+    getProductsByCategoryPie = (category) => {
+        return this.http.get(`/api/products/categoryToChart/${category}`)
+    }
+
     getCategories = () => {
         return this.http.get(`/api/products/categories`)
     }
