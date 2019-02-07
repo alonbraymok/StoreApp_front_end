@@ -16,7 +16,7 @@ export class PiechartComponent implements OnInit {
     this._productService.getCategories().subscribe( data => { 
       this.pieChartLabels = data['msg'];
       
-      this.pieChartLabels.forEach( label => { 
+      this.pieChartLabels.forEach(label => { 
         this._productService.getProductsByCategory(label).subscribe(data => {debugger
           console.log(data['msg'].length)
           this.pieChartData.push(data['msg'].length);

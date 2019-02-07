@@ -26,7 +26,6 @@ const routes: Routes = [
       {path: 'footer', component: FooterComponent},
       {path: 'admin-panel',canActivate: [HomeComponent], component: AdminPanelComponent, 
            children: [ {path: 'user-list', component: UserListComponent},
-                       
                        {path: 'piechart', component: PiechartComponent},
                        {path: 'product-list', component: ProductListComponent,
                         children:[

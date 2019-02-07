@@ -23,7 +23,6 @@ export class AddProductComponent implements OnInit {
   }
 
   addNewProduct(){
-    debugger
     this.product = new Product(this.productName, this.productType, this.productPrice, 
       this.productImg, this.productSupplier);
       this._product_service.addNewProduct(this.product);

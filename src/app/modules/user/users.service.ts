@@ -28,7 +28,6 @@ export class UsersService {
   }
 
   findWithQuery = (minVal, maxVal, nameLike) => {
-    debugger
     return this.http.get(`/api/manage/users/didOrders/?minVal=${minVal}&maxVal=${maxVal}&nameLike=${nameLike}`)
   }
 
@@ -99,7 +98,7 @@ export class UsersService {
     }
 
     getCharStatic = (char: string) => {
-      debugger
+      
       return this.http.post('/api/manage/users/cms',{char});
     }
 

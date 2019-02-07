@@ -27,8 +27,8 @@ export class ProductService {
         return this.http.get(`/api/products/search/?minval=${minval}&maxval=${maxval}&category=${category}`)
     }
 
-    getProductsByCategory = (category) => { debugger
-        return this.http.get(`/api/products/${category.toUpperCase()}`)
+    getProductsByCategory = (category) => {
+        return this.http.get(`/api/products/${category}`)
     }
 
     getCategories = () => {
@@ -44,7 +44,6 @@ export class ProductService {
     }
 
     addNewProduct(product: Product) {
-        debugger
         this.http.post('/api/manage/products', product).subscribe(data => console.log(data))
     }
     

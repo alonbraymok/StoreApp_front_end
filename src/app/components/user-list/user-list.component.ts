@@ -69,6 +69,6 @@ export class UserListComponent implements OnInit {
 
   }
   getUserByUsername(){
-    this._usersService.getUserByUsername(this.search).subscribe(data =>{debugger; this.users = data['msg']});
+    this._usersService.getUserByUsername(this.search).subscribe(data =>{ this.users = data['msg']});
   }
 }
