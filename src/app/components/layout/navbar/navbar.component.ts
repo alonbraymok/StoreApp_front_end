@@ -19,10 +19,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  addNewUser(){
-    
-  }
-
   isAdmin = () => {
     if (!this.activeUser) return false
     return this.activeUser.isAdmin

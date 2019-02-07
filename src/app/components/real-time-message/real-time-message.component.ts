@@ -14,10 +14,16 @@ export class RealTimeMessageComponent implements OnInit {
 	constructor(private chatService: ChatService) {
 		chatService.messages.subscribe(msg => {	debugger		
       console.log("Response from websocket: " + msg["message"] + " by: " + msg["author"]);
+      this.message.author = msg['author'];
+      this.message.message = msg['message'];
+      this.clientAnswer.push(this.message);
+      
+
 		});
 	}
   myAuthor: string;
   myMessage: string;
+  clientAnswer: any[] = []
 
   private message = {
 		author: '',
@@ -28,7 +34,8 @@ export class RealTimeMessageComponent implements OnInit {
     console.log('new message from client to websocket: ');
     this.message.author = this.myAuthor;
     this.message.message = this.myMessage;
-		this.chatService.messages.next(this.message);
+    this.clientAnswer.push(this.message);
+    this.chatService.messages.next(this.message);
     this.message.message = '';
     this.myAuthor = '';
     this.myMessage = '';

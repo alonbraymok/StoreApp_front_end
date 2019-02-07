@@ -93,7 +93,7 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {}};
     // RouterModule.forRoot(routes),
     ChartsModule,
     SocketIoModule.forRoot(config),
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyBQpoUSTYCOeaOLrvaXwRWJFkiMH3ghGks'}),
+    AgmCoreModule.forRoot({apiKey: ''}),
     NgbModule.forRoot()
     // RouterModule.forRoot([
     //   {path: '', component: HomeComponent},

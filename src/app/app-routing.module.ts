@@ -13,7 +13,7 @@ import { MilkyListComponent } from 'src/app/components/products/product-list/mil
 import { MeatListComponent } from 'src/app/components/products/product-list/meat-list/meat-list.component';
 import { SnackListComponent } from 'src/app/components/products/product-list/snack-list/snack-list.component';
 import { AboutUsComponent } from 'src/app/components/about-us/about-us.component'
-
+import { PiechartComponent } from 'src/app/components/piechart/piechart.component'
 
 const routes: Routes = [
 
@@ -26,6 +26,8 @@ const routes: Routes = [
       {path: 'footer', component: FooterComponent},
       {path: 'admin-panel',canActivate: [HomeComponent], component: AdminPanelComponent, 
            children: [ {path: 'user-list', component: UserListComponent},
+                       
+                       {path: 'piechart', component: PiechartComponent},
                        {path: 'product-list', component: ProductListComponent,
                         children:[
                         {path:'allProduct-list', component: AllProductListComponent},

@@ -11,7 +11,7 @@ export class CmsComponent implements OnInit {
   constructor(private _userService: UsersService) { }
 
   char: string;
-  result: string = "sds"
+  result: string = ""
 
   ngOnInit() {
     
@@ -21,7 +21,7 @@ export class CmsComponent implements OnInit {
     this._userService.getCharStatic(this.char).subscribe((data) =>{
       debugger
       console.log(data['msg']);
-      this.result = data['msg'];
+      this.result ="The letter: "+this.char+" found "+ data['msg'] + " times";
       this.char = "";
     });
   }

@@ -5,4 +5,7 @@
     <label>Message: </label>
     <input [(ngModel)]="myMessage" type="text" >
   </div>
-  <button (click)="sendMsg()">Send Message</button>
+  
+  <textarea  *ngFor="let m of clientAnswer">
+    &#13;&#10;Author: {{m['author']}}&#13;&#10; Message: {{m['message']}}</textarea>
+    <button (click)="sendMsg()">Send Message</button>
