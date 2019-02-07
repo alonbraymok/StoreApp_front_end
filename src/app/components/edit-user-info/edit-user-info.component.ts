@@ -22,6 +22,7 @@ export class EditUserInfoComponent implements OnInit {
   constructor(private _dataService: DataService, private _usersService: UsersService) { }
 
   ngOnInit() {
+    debugger
     this._dataService.currentMessage.subscribe(data => {
     this.userId = data["id"];
     this.userName = data["username"];
@@ -38,9 +39,11 @@ export class EditUserInfoComponent implements OnInit {
     this.userName, this.firstname);
     this._usersService.editUserInfo(this.editUser).subscribe(
       res => {
-        alert(JSON.stringify(res['msg']))
-      }
-    )
+        
+        debugger
+        this._dataService.changeMessage("ok");
+      });
+      
   }
 
 }

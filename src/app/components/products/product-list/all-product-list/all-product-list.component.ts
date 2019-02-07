@@ -18,7 +18,12 @@ export class AllProductListComponent implements OnInit {
 
   ngOnInit() {
     this._productService.getCurrentProducts().subscribe(data => { this.products = data['msg']});
-     
+    this._dataService.currentMessage.subscribe(data => { debugger
+      console.log(data)
+      if(data=="ok"){
+        this._productService.getCurrentProducts().subscribe(data => { this.products = data['msg']});
+      }
+    } )
   }
 
   deleteProduct(id: string){

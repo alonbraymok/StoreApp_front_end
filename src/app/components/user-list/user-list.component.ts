@@ -23,6 +23,12 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.getCurrentUsers();
+    this.dataService.currentMessage.subscribe(data => { debugger
+      console.log(data)
+      if(data=="ok"){
+        this.getCurrentUsers();
+      }
+    } )
   }
   getUserWithParam(){
     if(this.clickButton == 'Click here'){
@@ -45,7 +51,7 @@ export class UserListComponent implements OnInit {
   }
 
   getCurrentUsers(){
-    this._usersService.getCurrentUsers().subscribe(data => {
+    this._usersService.getCurrentUsers().subscribe(data => { debugger
       this.users = data['msg']});
   }
 
